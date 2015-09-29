@@ -1,0 +1,21 @@
+{
+	"name": "Central Hobbys Data Scrape",
+	"description": "Scrap sum datas!",
+	"version": "1.0",
+	"permissions": [
+		"activeTab", "notifications", "http://172.16.2.1/*"
+	],
+	"manifest_version": 2,
+	"background": {
+		"scripts": ["jquery.js", "background.js"],
+		"persistent": false
+	},
+	"commands": {},
+	"content_scripts": [
+		{
+			"matches": ["http://centralhobbies.com/*", "http://www.centralhobbies.com/*", "http://newsite.centralhobbies.com/*", "http://www.newsite.centralhobbies.com/*"],
+			"all_frames": true,
+			"js": ["jquery.js", "scraper.js"]
+		}
+	]
+}
